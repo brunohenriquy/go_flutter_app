@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_flutter_app/ui/screens/home_screen.dart';
 import 'package:go_flutter_app/ui/screens/profile_screen.dart';
 
 void main() => runApp(MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProfileScreen(),
+      home: HomeScreen(),
+      routes: {"/profile": (context) => ProfileScreen()},
     );
   }
 }

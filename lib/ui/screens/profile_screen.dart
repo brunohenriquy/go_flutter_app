@@ -23,7 +23,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Padding(
               padding: EdgeInsets.all(10.0),
               child: CircleImage(
-                url: "https://avatars0.githubusercontent.com/u/8320519?s=460&v=4",
+                url:
+                    "https://avatars0.githubusercontent.com/u/8320519?s=460&v=4",
               ),
             ),
             Padding(
@@ -37,6 +38,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Card(
+              color: Colors.black,
               elevation: 5.0,
               child: Column(
                 children: <Widget>[
@@ -65,5 +67,3 @@ class _ProfileScreenState extends State<ProfileScreen> {
     );
   }
 }
-
-
