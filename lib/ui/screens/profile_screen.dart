@@ -38,7 +38,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
             Card(
-              color: Colors.black,
               elevation: 5.0,
               child: Column(
                 children: <Widget>[

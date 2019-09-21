@@ -16,15 +16,12 @@ class CardLine extends StatelessWidget {
           Text(
             title,
             style: TextStyle(
-              color: Colors.white,
               fontWeight: FontWeight.w900,
             ),
           ),
           Text(
             value,
-            style: TextStyle(
-              color: Colors.white,
-            ),
+            style: TextStyle(),
           ),
         ],
       ),

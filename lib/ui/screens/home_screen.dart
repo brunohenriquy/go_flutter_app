@@ -50,7 +50,9 @@ class _HomeScreenState extends State<HomeScreen> {
             actions: <Widget>[
               IconButton(
                 icon: Icon(Icons.settings),
-                onPressed: () {},
+                onPressed: () {
+                  _showSettingsScreen();
+                },
               )
             ],
           ),
@@ -99,5 +101,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _openNewPage() {
     Navigator.pushNamed(context, "/profile");
+  }
+
+  void _showSettingsScreen(){
+    Navigator.pushNamed(context, "/settings");
   }
 }
