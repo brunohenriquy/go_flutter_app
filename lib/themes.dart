@@ -31,6 +31,16 @@ class MyThemes {
         return lightTheme;
     }
   }
+
+  static MyThemeKeys getThemeKeyFromString(String themeAsString) {
+    for (MyThemeKeys element in MyThemeKeys.values) {
+      if (element.toString() == themeAsString) {
+        return element;
+      }
+    }
+    return null;
+  }
+
 }
 
 class _CustomTheme extends InheritedWidget {

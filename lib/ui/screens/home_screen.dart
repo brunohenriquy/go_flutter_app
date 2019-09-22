@@ -103,7 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.pushNamed(context, "/profile");
   }
 
-  void _showSettingsScreen(){
+  void _showSettingsScreen() {
     Navigator.pushNamed(context, "/settings");
   }
 }

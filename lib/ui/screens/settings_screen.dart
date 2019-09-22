@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_flutter_app/helpers/file_helper.dart';
 
 import '../../themes.dart';
 
@@ -29,19 +30,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: <Widget>[
               RaisedButton(
                 onPressed: () {
-                  _changeTheme(context, MyThemeKeys.LIGHT);
+                  selectTheme(context, MyThemeKeys.LIGHT);
                 },
                 child: Text("Light"),
               ),
               RaisedButton(
                 onPressed: () {
-                  _changeTheme(context, MyThemeKeys.DARK);
+                  selectTheme(context, MyThemeKeys.DARK);
                 },
                 child: Text("Dark"),
               ),
               RaisedButton(
                 onPressed: () {
-                  _changeTheme(context, MyThemeKeys.DARKER);
+                  selectTheme(context, MyThemeKeys.DARKER);
                 },
                 child: Text("Darker"),
               ),
@@ -50,5 +51,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ),
     );
+  }
+
+  void selectTheme(BuildContext context, MyThemeKeys myThemeKeys) {
+    FileHelper.saveData(myThemeKeys.toString());
+    _changeTheme(context, myThemeKeys);
   }
 }
