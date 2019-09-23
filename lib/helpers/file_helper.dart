@@ -18,7 +18,12 @@ class FileHelper {
   static Future<String> readData() async {
     try {
       final file = await getFile();
-      return file.readAsString();
+      bool fileExists = await file.exists();
+      if (fileExists) {
+        return file.readAsString();
+      }
+
+      return null;
     } catch (e) {
       return null;
     }

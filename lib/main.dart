@@ -9,15 +9,19 @@ import 'package:go_flutter_app/ui/screens/settings_screen.dart';
 import 'helpers/file_helper.dart';
 
 void main() async {
-
   MyThemeKeys _themeKey = MyThemeKeys.LIGHT;
 
   String _data = await FileHelper.readData();
 
-  String _themeKeyString = json.decode(_data);
+  if (_data != null) {
+    String themeKeyString = json.decode(_data);
 
-  if (_themeKeyString != null) {
-    _themeKey = MyThemes.getThemeKeyFromString(_themeKeyString);
+    if (themeKeyString != null && themeKeyString.isNotEmpty) {
+      MyThemeKeys themeFound = MyThemes.getThemeKeyFromString(themeKeyString);
+      if (themeFound != null) {
+        _themeKey = themeFound;
+      }
+    }
   }
 
   runApp(CustomTheme(initialThemeKey: _themeKey, child: MyApp()));
